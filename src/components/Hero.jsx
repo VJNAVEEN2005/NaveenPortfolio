@@ -60,7 +60,7 @@ const Hero = () => {
       </div>
       <div className=" mx-10">
         <img
-          className="w-1/2 mx-auto"
+          className="w-1/2 rounded-full mx-auto"
           src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
           alt="React logo"
         />
