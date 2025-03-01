@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import React from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
@@ -17,7 +18,7 @@ const AboutMe = () => {
         start: "-500% 60%",
         end: "top 10%",
         scrub: 3,
-       // markers: true,
+        // markers: true,
       },
     });
 
@@ -53,8 +54,8 @@ const AboutMe = () => {
         opacity: 0,
         duration: 1,
         delay: 0.5,
-        stagger: 0.3, 
-        ease: "power2.out", 
+        stagger: 0.3,
+        ease: "power2.out",
       }
     );
   }, []);
@@ -82,7 +83,10 @@ const AboutMe = () => {
                 keen eye for design and a love for clean code, I transform ideas
                 into reality.
               </p>
-              <div className=" mt-5 border-2 p-2 border-[#ff4400] bg-orange-300 rounded-xl">
+              <motion.div
+                whileHover={{ scale: 1.01, transition: { duration: 0.1 } }}
+                className=" mt-5 border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl"
+              >
                 <h4 className=" text-[#ff4400] text-4xl font-bold">
                   My Journey
                 </h4>
@@ -92,9 +96,12 @@ const AboutMe = () => {
                   continuously strive to stay updated with the latest
                   technologies and best practices in the field.
                 </p>
-              </div>
+              </motion.div>
               <div className=" grid grid-cols-2 gap-5 mt-5">
-                <div className=" border-2 p-2 border-[#ff4400] bg-orange-300 rounded-xl">
+                <motion.div
+                  whileHover={{ scale: 1.01, transition: { duration: 0.1 } }}
+                  className=" border-2 p-3 border-[#ff4400] cursor-pointer  shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl"
+                >
                   <h4 className=" text-[#ff4400] text-4xl font-bold">
                     Education
                   </h4>
@@ -106,8 +113,11 @@ const AboutMe = () => {
                     and gaining experience in programming languages like C, C++,
                     Java, Pyhton and React.
                   </p>
-                </div>
-                <div className=" border-2 p-2 border-[#ff4400] bg-orange-300 rounded-xl">
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.01, transition: { duration: 0.1 } }}
+                  className=" border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl"
+                >
                   <h4 className=" text-[#ff4400] text-4xl font-bold">
                     Experience
                   </h4>
@@ -118,7 +128,7 @@ const AboutMe = () => {
                     diploma, an NPTEL IoT course, and a 100-day C++ coding
                     challenge to improve problem-solving skills.
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
