@@ -30,6 +30,7 @@ export const projectsData = [
         description: "Developed a goal-setting app using React Native that allows users to set and delete goals. This project improved my skills in React Native and mobile app development.",
         image: goalsReact,
         techStack: ["React Native", "Expo"],
+        phone: true,
 
     },
 

@@ -72,6 +72,8 @@ const MyWorks = () => {
                     image={project.image}
                     techStack={project.techStack}
                     link={project.link || null}
+                    phone={project.phone || false}
+                    key={index}
                   />
                 );
               })}
@@ -85,7 +87,15 @@ const MyWorks = () => {
 
 export default MyWorks;
 
-const MyWorksDisplay = ({ title, description, image, techStack, link }) => {
+const MyWorksDisplay = ({
+  title,
+  description,
+  image,
+  techStack,
+  link,
+  phone,
+  key,
+}) => {
   const [cursorText, setCursorText] = useState(""); // Text inside the cursor
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false); // Track hover state
@@ -100,7 +110,7 @@ const MyWorksDisplay = ({ title, description, image, techStack, link }) => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 gap-10 m-10">
+    <div key={key} className="grid grid-cols-2 gap-10 m-10">
       {isHovering && (
         <motion.div
           className="fixed w-20 z-40 h-20 flex text-center items-center p-5 justify-center bg-[#FF7F50] text-white text-sm font-bold rounded-full pointer-events-none"
@@ -129,10 +139,10 @@ const MyWorksDisplay = ({ title, description, image, techStack, link }) => {
               window.open(link);
             }
           }}
-          className=" w-[40vw] min-h-96 relative bg-[#FF7F50] overflow-hidden rounded-3xl"
+          className=" w-[40vw] h-96 relative justify-center flex bg-[#FF7F50] overflow-hidden rounded-3xl"
         >
           <img
-            className=" absolute bottom-[10%] right-0 rounded-2xl scale-110 border-2 border-[white] -rotate-[5deg]"
+            className={`   rounded-2xl  border-2 border-[white] -rotate-[5deg] ${phone ? " " : "absolute right-0 bottom-[10%] scale-110"}`}
             src={image}
             alt="Image will be Here "
           />
