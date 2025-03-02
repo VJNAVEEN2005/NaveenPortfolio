@@ -64,6 +64,7 @@ const MySkills = () => {
       y: "90vh",
       backgroundColor: "#1A1A1A",
       borderWidth: 2,
+      duration: 1,
       borderColor: "#FF7F50",
     });
 
