@@ -1,4 +1,6 @@
 import React from "react";
+import { profile } from "../assets/AboutMe/data";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const socialMedia = [
@@ -58,10 +60,14 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className=" mx-10">
-        <img
-          className="w-1/2 rounded-full mx-auto"
-          src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
+      <div className=" m-10 ">
+        <motion.img
+        initial={{ y:10 }}
+        animate={{ y: -10 }}
+        transition={{ repeat: Infinity, duration: 1, repeatType:'mirror', ease: "easeInOut" }}
+        //whileHover={{ scale: 1.1, duration: 0.5 }}
+          className="w-1/2  border-4 border-[#FF7F50] cursor-pointer rounded-full mx-auto shadow-lg shadow-[#FF7F50] "
+          src={profile}
           alt="React logo"
         />
       </div>

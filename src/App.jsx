@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Page_Not_Found from './pages/Page_Not_Found'
 import About from './pages/About'
+import Skills from './pages/Skills'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
+        <Route path='/skills' element={<Skills/>} />
         <Route path='*' element={<Page_Not_Found/>} />
       </Routes>
     </>
