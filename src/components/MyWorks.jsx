@@ -1,8 +1,9 @@
 import { useGSAP } from "@gsap/react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
-import { motion, time } from "framer-motion";
+import { motion } from "framer-motion";
+import { projectsData } from "../assets/MyProject/data";
 gsap.registerPlugin(ScrollTrigger);
 
 const MyWorks = () => {
@@ -63,9 +64,17 @@ const MyWorks = () => {
               id="MyWorksDisplay"
               className=" flex flex-col  overflow-y-scroll h-[70vh]"
             >
-              <MyWorksDisplay />
-              <MyWorksDisplay />
-              <MyWorksDisplay />
+              {projectsData.map((project, index) => {
+                return (
+                  <MyWorksDisplay
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                    techStack={project.techStack}
+                    link={project.link || null}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
@@ -76,27 +85,64 @@ const MyWorks = () => {
 
 export default MyWorks;
 
-const MyWorksDisplay = () => {
+const MyWorksDisplay = ({ title, description, image, techStack, link }) => {
+  const [cursorText, setCursorText] = useState(""); // Text inside the cursor
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false); // Track hover state
+
+  useEffect(() => {
+    // Update cursor position when the mouse moves
+    const moveCursor = (e) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", moveCursor);
+    return () => window.removeEventListener("mousemove", moveCursor);
+  }, []);
+
   return (
     <div className="grid grid-cols-2 gap-10 m-10">
+      {isHovering && (
+        <motion.div
+          className="fixed w-20 z-40 h-20 flex text-center items-center p-5 justify-center bg-[#FF7F50] text-white text-sm font-bold rounded-full pointer-events-none"
+          style={{
+            top: cursorPosition.y - 40, // Adjust position to center cursor
+            left: cursorPosition.x - 40,
+            scale: 0,
+          }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
+          {cursorText}
+        </motion.div>
+      )}
+
       <div className=" ">
-        <div className=" w-[40vw] min-h-96 relative bg-[#FF7F50] rounded-3xl">
+        <motion.div
+          onMouseEnter={() => {
+            setCursorText(link ? "Project Is Live" : "Not in Live");
+            setIsHovering(true);
+          }}
+          style={{ cursor: "none" }}
+          onMouseLeave={() => setIsHovering(false)}
+          onClick={() => {
+            if (link) {
+              window.open(link);
+            }
+          }}
+          className=" w-[40vw] min-h-96 relative bg-[#FF7F50] overflow-hidden rounded-3xl"
+        >
           <img
-            className=" absolute bottom-0 right-0"
-            src=""
+            className=" absolute bottom-[10%] right-0 rounded-2xl scale-110 border-2 border-[white] -rotate-[5deg]"
+            src={image}
             alt="Image will be Here "
           />
-        </div>
+        </motion.div>
       </div>
       <div className=" flex flex-col justify-evenly">
-        <h3 className=" text-3xl text-[#FF7F50] font-bold">TASK MAINTAIN</h3>
-        <p className=" text-white text-lg">
-          Developed a simple To do list app using that allows users to create
-          and delete tasks. This project enhanced my skills in mobile app
-          development.
-        </p>
+        <h3 className=" text-3xl text-[#FF7F50] font-bold">{title}</h3>
+        <p className=" text-white text-lg">{description}</p>
         <div className=" flex gap-2">
-          {["Flutter", "React Js", "Html", "Css"].map((item, index) => {
+          {techStack.map((item, index) => {
             return (
               <div
                 className=" text-white bg-[#373737] border px-3 py-1 cursor-pointer rounded-3xl"
@@ -108,8 +154,16 @@ const MyWorksDisplay = () => {
           })}
         </div>
         <div>
-          <button className=" bg-[#FF7F50] rounded-2xl text-white font-bold px-3 py-1">
-            Live
+          <button
+            style={{ cursor: link ? "pointer" : "default" }}
+            onClick={() => {
+              if (link) {
+                window.open(link);
+              }
+            }}
+            className=" bg-[#FF7F50] rounded-2xl text-white font-bold px-3 py-1"
+          >
+            {link ? "Live Project" : "Not in Live"}
           </button>
         </div>
       </div>

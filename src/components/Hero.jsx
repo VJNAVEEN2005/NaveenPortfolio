@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <section className=" min-h-screen grid grid-cols-2 place-items-center">
-      <div className=" mx-10 flex flex-col gap-4">
+      <div className=" mx-30 flex flex-col gap-4">
         <h4 className=" font-bold text-xl text-[#FF7F50]">
           Welcome to my portfolio
         </h4>
