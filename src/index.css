@@ -4,3 +4,11 @@
 body{
     background: #121212;
 }
+
+html{
+    scroll-snap-type: y proximity;
+}
+
+section{
+    scroll-snap-align: start;
+}

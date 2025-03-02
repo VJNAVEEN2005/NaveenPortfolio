@@ -49,19 +49,34 @@ const MySkills = () => {
       opacity: 0,
       ease: "power1.inOut",
     });
-    timeline.from("#scroll-display-skills div", {
+    timeline.from(".skill-container", {
       y: -100,
       opacity: 0,
-      duration: 1,
       delay: 0.5,
-      stagger: 0.3,
+      stagger: {
+        amount: 0.3,
+        from: "start",
+      },
       ease: "power2.out",
     });
+
+    timeline.to("#scroll-ball-skills", {
+      y: "90vh",
+      backgroundColor: "#1A1A1A",
+      borderWidth: 2,
+      borderColor: "#FF7F50",
+    });
+
+    timeline.from("#skills-overview", {
+      y: -100,
+      opacity: 0,
+      ease: "power1.inOut",
+    })
   });
   return (
     <section
       id="scroll-skills"
-      className=" min-h-screen flex flex-col  text-white"
+      className=" min-h-screen grid grid-rows-3 text-white"
     >
       <div
         id="scroll-ball-skills"
@@ -76,12 +91,32 @@ const MySkills = () => {
           <h2 className=" text-[#FF7F50]">Skills</h2>
         </div>
 
-        <div id="scroll-display-skills" className="grid grid-cols-3 gap-5 mt-10">
-          <SkillsDisplay name={"Programming Languages"} data={programmingLanguages} />
+        <div
+          id="scroll-display-skills"
+          className="grid grid-cols-3 gap-5 mt-10"
+        >
+          <SkillsDisplay
+            name={"Programming Languages"}
+            data={programmingLanguages}
+          />
           <SkillsDisplay name={"Development"} data={development} />
-          <SkillsDisplay name={"Tools And Platforms"} data={toolsAndPlatforms} />
+          <SkillsDisplay
+            name={"Tools And Platforms"}
+            data={toolsAndPlatforms}
+          />
         </div>
-        
+
+        <div id="skills-overview" className=" text-center mt-10 mx-[20%] grid grid-rows-1 gap-5">
+          <h2 className=" text-3xl font-bold">Skills Overview</h2>
+          <p className=" text-gray-300 font-semibold">
+            I have experience in C, C++, Java, JavaScript (React.js), HTML/CSS,
+            and Flutter, with hands-on projects like my portfolio website, CGPA
+            calculator, task manager, and a Chrome extension. I'm currently
+            working on a DBMS project (Synlancer) and an ATM console app in C++.
+            Additionally, I'm preparing for interviews with a 100-day C++ coding
+            challenge and the NPTEL IoT exam.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -89,26 +124,25 @@ const MySkills = () => {
 
 export default MySkills;
 
-
 const SkillsDisplay = ({ data, name }) => {
   return (
     <Tilt>
-      <div className=" flex flex-col gap-5 border-4 p-5 rounded-2xl bg-[#1A1A1A] shadow-md shadow-[#FF7F50] border-[#FF7F50]">
-            <div className=" text-3xl font-bold text-center">{name}</div>
-            <div className=" grid grid-cols-2 grid-rows-4 gap-4">
-              {data.map((item, index) => (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  className="  bg-white flex justify-center rounded-xl gap-3 hover:scale-110 transition-all hover:shadow-lg hover:shadow-[#FF7F50] items-center p-2 "
-                  key={index}
-                >
-                  <img src={item.img} className=" w-8" alt="" />
-                  <div className=" text-black font-bold">{item.name}</div>
-                </a>
-              ))}
-            </div>
-          </div>
+      <div className="skill-container flex flex-col gap-5 border-4 p-5 rounded-2xl bg-[#1A1A1A] shadow-md shadow-[#FF7F50] border-[#FF7F50]">
+        <div className=" text-3xl font-bold text-center">{name}</div>
+        <div className=" grid grid-cols-2 grid-rows-4 gap-4">
+          {data.map((item, index) => (
+            <a
+              href={item.link}
+              target="_blank"
+              className="  bg-white flex justify-center rounded-xl gap-3 hover:scale-110 transition-all hover:shadow-lg hover:shadow-[#FF7F50] items-center p-2 "
+              key={index}
+            >
+              <img src={item.img} className=" w-8" alt="" />
+              <div className=" text-black font-bold">{item.name}</div>
+            </a>
+          ))}
+        </div>
+      </div>
     </Tilt>
   );
-}
+};
