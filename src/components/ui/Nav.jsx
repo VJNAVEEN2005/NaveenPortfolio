@@ -17,8 +17,8 @@ const Nav = () => {
       url: "/skills",
     },
     {
-      name: "Projects",
-      url: "/projects",
+      name: "My Works",
+      url: "/works",
     },
     {
       name: "Contact",

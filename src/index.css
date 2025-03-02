@@ -12,3 +12,22 @@ html{
 section{
     scroll-snap-align: start;
 }
+
+#MyWorksDisplay::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+#MyWorksDisplay::-webkit-scrollbar-track {
+    background: #1A1A1A;
+    border-radius: 10px;
+  }
+  
+  #MyWorksDisplay::-webkit-scrollbar-thumb {
+    background: #FF7F50;
+    border-radius: 10px;
+  }
+  
+  #MyWorksDisplay::-webkit-scrollbar-thumb:hover {
+    background: #ff9966; /* Lighter shade on hover */
+  }

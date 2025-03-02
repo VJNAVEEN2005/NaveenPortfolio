@@ -24,7 +24,7 @@ const MySkills = () => {
         start: "-200px 60%",
         end: "top 10%",
         scrub: 2,
-        markers: true,
+        //markers: true,
       },
     });
 
@@ -71,21 +71,18 @@ const MySkills = () => {
       y: -100,
       opacity: 0,
       ease: "power1.inOut",
-    })
+    });
   });
   return (
-    <section
-      id="scroll-skills"
-      className=" min-h-screen grid grid-rows-3 text-white"
-    >
+    <section id="scroll-skills" className=" min-h-screen flex text-white">
       <div
         id="scroll-ball-skills"
         className=" absolute w-5 h-5 rounded-full  bg-[#FF7F50]"
       ></div>
-      <div className=" flex flex-col items-center justify-center">
+      <div className=" flex flex-col justify-evenly mx-10">
         <div
           id="NySkills-head"
-          className=" flex text-5xl mt-20 gap-2 font-bold"
+          className=" flex text-5xl gap-2 font-bold"
         >
           <h2>My </h2>
           <h2 className=" text-[#FF7F50]">Skills</h2>
@@ -93,7 +90,7 @@ const MySkills = () => {
 
         <div
           id="scroll-display-skills"
-          className="grid grid-cols-3 gap-5 mt-10"
+          className="grid grid-cols-3 gap-5"
         >
           <SkillsDisplay
             name={"Programming Languages"}
@@ -106,15 +103,17 @@ const MySkills = () => {
           />
         </div>
 
-        <div id="skills-overview" className=" text-center mt-10 mx-[20%] grid grid-rows-1 gap-5">
+        <div
+          id="skills-overview"
+          className=" text-center mx-[20%] grid grid-rows-1 gap-5"
+        >
           <h2 className=" text-3xl font-bold">Skills Overview</h2>
           <p className=" text-gray-300 font-semibold">
             I have experience in C, C++, Java, JavaScript (React.js), HTML/CSS,
-            and Flutter, with hands-on projects like my portfolio website, CGPA
-            calculator, task manager, and a Chrome extension. I'm currently
-            working on a DBMS project (Synlancer) and an ATM console app in C++.
-            Additionally, I'm preparing for interviews with a 100-day C++ coding
-            challenge and the NPTEL IoT exam.
+            and Flutter, with projects like my portfolio website, CGPA
+            calculator, task manager, and a Chrome extension. I'm also working
+            on a DBMS project (Synlancer) and preparing for interviews with a
+            100-day C++ coding challenge.
           </p>
         </div>
       </div>
