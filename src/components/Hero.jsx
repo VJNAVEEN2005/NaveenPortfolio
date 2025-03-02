@@ -28,13 +28,13 @@ const Hero = () => {
 
   return (
     <section className=" min-h-screen grid grid-cols-2 place-items-center">
-      <div className=" mx-30 flex flex-col gap-4">
+      <div className=" mx-10 flex flex-col gap-4">
         <h4 className=" font-bold text-xl text-[#FF7F50]">
           Welcome to my portfolio
         </h4>
-        <h1 className="text-6xl gap-4 flex text-center text-white font-bold">
-          <div>Hi, I'm</div>
-          <div className=" text-[#FF7F50]"> Naveen VJ</div>
+        <h1 className="text-6xl gap-4 flex text-center  text-white font-bold">
+          <div className=" flex flex-row">Hi, I'm</div>
+          <div className=" text-[#FF7F50] flex flex-row"> Naveen VJ</div>
         </h1>
         <h3 className=" text-gray-500 font-semibold">
           Full Stack Developer & UI/UX Enthusiast
