@@ -40,7 +40,7 @@ const AboutMe = () => {
       overflow: "hidden",
     });
     timeline.to("#scroll-ball-about", {
-      scale: 150,
+      scale: 160,
       duration: 6,
     });
     timeline.to("#show-about", {

@@ -26,12 +26,12 @@ const Nav = () => {
     },
   ];
   return (
-    <div className=" absolute top-5 justify-center w-full flex z-40 ">
+    <div className=" fixed  top-5 justify-center w-full flex z-40 ">
       <motion.div
         initial={{ y: -250, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120 }}
-        className=" text-white flex gap-5 border-2 border-[#FF7F50] px-2 py-2 rounded-full"
+        className=" text-white flex gap-5 border-2 bg-[#121212] border-[#FF7F50] px-2 py-2 rounded-full"
       >
         {nav.map((item, index) => {
           return (

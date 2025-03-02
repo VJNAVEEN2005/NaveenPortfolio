@@ -4,7 +4,7 @@ import Name from './ui/Name'
 
 const Header = () => {
   return (
-    <div className='  bg-black '>
+    <div className=''>
         <Name/>
         <Nav/>
     </div>
