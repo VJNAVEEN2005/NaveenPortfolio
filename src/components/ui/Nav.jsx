@@ -26,7 +26,7 @@ const Nav = () => {
     },
   ];
   return (
-    <div className=" fixed  top-5 justify-center w-full flex z-40 ">
+    <div className=" fixed top-5 justify-center w-full flex z-40 ">
       <motion.div
         initial={{ y: -250, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
