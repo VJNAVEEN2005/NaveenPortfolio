@@ -71,13 +71,13 @@ const AboutMe = () => {
           id="show-about"
           className="absolute hidden w-[90%] h-[80vh]  justify-center items-center"
         >
-          <div className=" flex">
+          <div className=" md:flex hidden">
             <div id="scroll-content-about" className="mx-10">
               <div className=" flex gap-2">
-                <h1 className=" text-white text-6xl font-bold">About</h1>
-                <h1 className=" text-[#ff4400] text-6xl font-bold">Me</h1>
+                <h1 className=" text-white md:text-6xl font-bold">About</h1>
+                <h1 className=" text-[#ff4400] md:text-6xl font-bold">Me</h1>
               </div>
-              <p className=" text-white text-2xl font-semibold mt-5">
+              <p className=" text-white md:text-2xl text-sm font-semibold mt-5">
                 Hi! I'm Naveen VJ, a passionate web developer dedicated to
                 creating beautiful and functional digital experiences. With a
                 keen eye for design and a love for clean code, I transform ideas
@@ -87,25 +87,25 @@ const AboutMe = () => {
                 whileHover={{ scale: 1.01, transition: { duration: 0.1 } }}
                 className=" mt-5 border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl"
               >
-                <h4 className=" text-[#ff4400] text-4xl font-bold">
+                <h4 className=" text-[#ff4400] md:text-4xl font-bold">
                   My Journey
                 </h4>
-                <p className=" text-white text-xl font-semibold mt-5">
+                <p className=" text-white md:text-xl text-sm font-semibold mt-5">
                   My journey in web development started with curiosity and has
                   evolved into a professional pursuit of excellence. I
                   continuously strive to stay updated with the latest
                   technologies and best practices in the field.
                 </p>
               </motion.div>
-              <div className=" grid grid-cols-2 gap-5 mt-5">
+              <div className=" grid md:grid-cols-2 gap-5 mt-5">
                 <motion.div
                   whileHover={{ scale: 1.01, transition: { duration: 0.1 } }}
                   className=" border-2 p-3 border-[#ff4400] cursor-pointer  shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl"
                 >
-                  <h4 className=" text-[#ff4400] text-4xl font-bold">
+                  <h4 className=" text-[#ff4400] md:text-4xl font-bold">
                     Education
                   </h4>
-                  <p className=" text-white font-semibold mt-5">
+                  <p className=" text-white font-semibold text-sm mt-5">
                     Currently pursuing B.Tech in Electrical and Electronics
                     Engineering (EEE) at Puducherry Technological University.
                     Alongside your studies, you are actively developing your
@@ -118,10 +118,10 @@ const AboutMe = () => {
                   whileHover={{ scale: 1.01, transition: { duration: 0.1 } }}
                   className=" border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl"
                 >
-                  <h4 className=" text-[#ff4400] text-4xl font-bold">
+                  <h4 className=" text-[#ff4400] md:text-4xl  font-bold">
                     Experience
                   </h4>
-                  <p className=" text-white font-semibold mt-5">
+                  <p className=" text-white font-semibold text-sm mt-5">
                     Experience in software development, working on projects like
                     a portfolio website, Chrome extension, ATM console app, and
                     Flutter-based task manager. You also completed a Python
@@ -129,6 +129,58 @@ const AboutMe = () => {
                     challenge to improve problem-solving skills.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </div>
+
+          <div className=" flex md:hidden">
+            <div id="scroll-content-about" className="mx-2 w-[85vw]">
+              <div className=" flex gap-2 text-3xl mx-2">
+                <h1 className=" text-white md:text-6xl font-bold">About</h1>
+                <h1 className=" text-[#ff4400] md:text-6xl font-bold">Me</h1>
+              </div>
+              <p className=" text-white text-sm font-semibold mt-2 mx-2">
+                Hi! I'm Naveen VJ, a passionate web developer dedicated to
+                creating beautiful and functional digital experiences. With a
+                keen eye for design and a love for clean code, I transform ideas
+                into reality.
+              </p>
+              <div className="mt-2 border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl">
+                <h2 className=" text-xl font-bold text-[#ff4400]">
+                  My Journey
+                </h2>
+                <p className=" text-sm font-semibold text-white mt-2">
+                  My journey in web development started with curiosity and has
+                  evolved into a professional pursuit of excellence. I
+                  continuously strive to stay updated with the latest
+                  technologies and best practices in the field.
+                </p>
+              </div>
+              <div className=" grid gap-2 mt-2 text-white grid-cols-2 ">
+                <div className="border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl">
+                  <h2 className=" text-xl font-bold text-[#ff4400]">Education</h2>
+                  <ul className=" list-disc list-inside text-sm">
+                    <li>
+                      B.Tech in EEE at Puducherry Technological University.
+                    </li>
+                    <li>Learning software development alongside studies.</li>
+                    <li>Skilled in C, C++, Java, Python, and React.</li>
+                  </ul>
+                </div>
+                <div className="border-2 p-3 border-[#ff4400] cursor-pointer shadow-xl shadow-[#ff4400] bg-orange-300 rounded-xl">
+                  <h2 className=" text-xl font-bold text-[#ff4400]">Experience</h2>
+                  <ul className=" list-disc list-inside text-sm">
+                    <li>
+                      Built a portfolio website, Chrome extension, and ATM
+                      console app.
+                    </li>
+                    <li>Developed a Flutter task manager.</li>
+                    <li>
+                      Completed Python diploma, NPTEL IoT course, and 100-day
+                      C++ challenge.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

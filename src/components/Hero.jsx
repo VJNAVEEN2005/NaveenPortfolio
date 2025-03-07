@@ -27,40 +27,41 @@ const Hero = () => {
   ];
 
   return (
-    <section className=" min-h-screen grid grid-cols-2 place-items-center">
-      <div className=" mx-10 flex flex-col gap-4">
-        <h4 className=" font-bold text-xl text-[#FF7F50]">
+    <section className=" min-h-screen grid md:grid-cols-2 place-items-center">
+      <div className=" md:mx-10 mx-5 flex flex-col gap-4">
+        <h4 className=" font-bold md:text-xl text-lg text-[#FF7F50]">
           Welcome to my portfolio
         </h4>
-        <h1 className="text-6xl gap-4 flex text-center  text-white font-bold">
+        
+        <h1 className="md:text-6xl text-4xl gap-4 flex text-center  text-white font-bold">
           <div className=" flex flex-row">Hi, I'm</div>
           <div className=" text-[#FF7F50] flex flex-row"> Naveen VJ</div>
         </h1>
-        <h3 className=" text-gray-500 font-semibold">
+        <h3 className=" text-gray-500 not-md:text-sm font-semibold">
           Full Stack Developer & UI/UX Enthusiast
         </h3>
-        <p className=" text-gray-300 font-semibold">
+        <p className=" text-gray-300 not-md:text-sm font-semibold">
           Crafting beautiful web experiences with modern technologies.
           Passionate about creating intuitive and performant applications that
           solve real-world problems.
         </p>
         <div className=" flex gap-5">
-          <button className=" bg-[#FF7F50] py-3 px-4 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff6250]">
+          <button className=" bg-[#FF7F50] md:py-3 md:px-4 not-md:text-sm px-3 py-2 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff6250]">
             View MyWorks
           </button>
-          <button className="  border border-[#FF7F50] py-3 px-4 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff7f5042]">
+          <button className="  border border-[#FF7F50] md:py-3 md:px-4 not-md:text-sm px-3 py-2 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff7f5042]">
             Contact Me
           </button>
         </div>
         <div className=" flex gap-3">
           {socialMedia.map((item, index) => (
             <a href={item.link} target="_blank" rel="noreferrer">
-              <img src={item.icon} className=" w-10" alt={item.title} />
+              <img src={item.icon} className=" md:w-10 w-5" alt={item.title} />
             </a>
           ))}
         </div>
       </div>
-      <div className=" m-10 ">
+      <div className=" m-10 md:block hidden ">
         <motion.img
         initial={{ y:10 }}
         animate={{ y: -10 }}
