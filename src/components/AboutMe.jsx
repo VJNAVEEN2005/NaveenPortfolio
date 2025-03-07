@@ -133,8 +133,8 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className=" flex md:hidden flex-col justify-evenly">
-            <div id="scroll-content-about" className="mx-2 w-[85vw]">
+          <div className=" flex md:hidden h-full">
+            <div id="scroll-content-about" className="mx-2 w-[85vw] h-[85vh] flex flex-col justify-evenly">
               <div className=" flex gap-2 text-3xl mx-2">
                 <h1 className=" text-white md:text-6xl font-bold">About</h1>
                 <h1 className=" text-[#ff4400] md:text-6xl font-bold">Me</h1>
