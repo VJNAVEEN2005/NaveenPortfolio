@@ -80,7 +80,7 @@ const MySkills = () => {
         id="scroll-ball-skills"
         className=" absolute w-5 h-5 rounded-full  bg-[#FF7F50]"
       ></div>
-      <div className=" flex flex-col justify-evenly mx-10">
+      <div className=" flex flex-col not-md:mt-3 justify-evenly mx-10">
         <div
           id="NySkills-head"
           className=" flex text-5xl gap-2 font-bold"
@@ -91,7 +91,7 @@ const MySkills = () => {
 
         <div
           id="scroll-display-skills"
-          className="grid grid-cols-3 gap-5"
+          className="grid md:grid-cols-3 gap-5"
         >
           <SkillsDisplay
             name={"Programming Languages"}
