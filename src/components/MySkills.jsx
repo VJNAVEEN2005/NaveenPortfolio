@@ -91,7 +91,7 @@ const MySkills = () => {
 
         <div
           id="scroll-display-skills"
-          className="grid md:grid-cols-3 gap-5"
+          className="grid md:grid-cols-3 gap-5 not-md:mt-5"
         >
           <SkillsDisplay
             name={"Programming Languages"}
@@ -106,10 +106,10 @@ const MySkills = () => {
 
         <div
           id="skills-overview"
-          className=" text-center mx-[20%] grid grid-rows-1 gap-5"
+          className=" text-center md:mx-[20%] not-md:my-5 grid grid-rows-1 gap-5"
         >
           <h2 className=" text-3xl font-bold">Skills Overview</h2>
-          <p className=" text-gray-300 font-semibold">
+          <p className=" text-gray-300 text-justify font-semibold">
             I have experience in C, C++, Java, JavaScript (React.js), HTML/CSS,
             and Flutter, with projects like my portfolio website, CGPA
             calculator, task manager, and a Chrome extension. I'm also working
@@ -128,17 +128,17 @@ const SkillsDisplay = ({ data, name }) => {
   return (
     <Tilt>
       <div className="skill-container flex flex-col gap-5 border-4 p-5 rounded-2xl bg-[#1A1A1A] shadow-md shadow-[#FF7F50] border-[#FF7F50]">
-        <div className=" text-3xl font-bold text-center">{name}</div>
-        <div className=" grid grid-cols-2 grid-rows-4 gap-4">
+        <div className=" md:text-3xl text-2xl font-bold text-center">{name}</div>
+        <div className=" md:grid md:grid-cols-2 md:grid-rows-4 flex flex-wrap justify-evenly gap-4">
           {data.map((item, index) => (
             <a
               href={item.link}
               target="_blank"
-              className="  bg-white flex justify-center rounded-xl gap-3 hover:scale-110 transition-all hover:shadow-lg hover:shadow-[#FF7F50] items-center p-2 "
+              className="  bg-white flex justify-center rounded-xl md:gap-3 hover:scale-110 transition-all hover:shadow-lg hover:shadow-[#FF7F50] items-center p-2 not-md:py-2 not-md:px-3 "
               key={index}
             >
-              <img src={item.img} className=" w-8" alt="" />
-              <div className=" text-black font-bold">{item.name}</div>
+              <img src={item.img} className=" md:w-8 w-4" alt="" />
+              <div className=" text-black font-bold not-md:text-sm">{item.name}</div>
             </a>
           ))}
         </div>
