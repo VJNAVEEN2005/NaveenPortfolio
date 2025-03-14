@@ -110,7 +110,7 @@ const MyWorksDisplay = ({
   }, []);
 
   return (
-    <div key={key} className="grid grid-cols-2 gap-10 m-10">
+    <div key={key} className="grid md:grid-cols-2 md:gap-10 gap-5 md:m-10 mx-2 my-5">
       {isHovering && (
         <motion.div
           className="fixed w-20 z-40 h-20 flex text-center items-center p-5 justify-center bg-[#FF7F50] text-white text-sm font-bold rounded-full pointer-events-none"
@@ -129,7 +129,7 @@ const MyWorksDisplay = ({
       <div className=" ">
         <motion.div
           onMouseEnter={() => {
-            setCursorText(link ? "Project Is Live" : "Not in Live");
+            setCursorText(link ? "Project Is Live" : "Not Live");
             setIsHovering(true);
           }}
           style={{ cursor: "none" }}
@@ -139,7 +139,7 @@ const MyWorksDisplay = ({
               window.open(link);
             }
           }}
-          className=" w-[40vw] h-96 relative justify-center flex bg-[#FF7F50] overflow-hidden rounded-3xl"
+          className=" md:w-[40vw] md:h-96 h-52 relative justify-center flex bg-[#FF7F50] overflow-hidden rounded-3xl"
         >
           <img
             className={`   rounded-2xl  border-2 border-[white] -rotate-[5deg] ${phone ? " " : "absolute right-0 bottom-[10%] scale-110"}`}
@@ -151,11 +151,11 @@ const MyWorksDisplay = ({
       <div className=" flex flex-col justify-evenly">
         <h3 className=" text-3xl text-[#FF7F50] font-bold">{title}</h3>
         <p className=" text-white text-lg">{description}</p>
-        <div className=" flex gap-2">
+        <div className=" md:flex gap-2 not-md:mt-2">
           {techStack.map((item, index) => {
             return (
               <div
-                className=" text-white bg-[#373737] border px-3 py-1 cursor-pointer rounded-3xl"
+                className=" text-white text-center bg-[#373737] border px-3 py-1 cursor-pointer rounded-3xl"
                 key={index}
               >
                 {item}
@@ -163,7 +163,7 @@ const MyWorksDisplay = ({
             );
           })}
         </div>
-        <div>
+        <div className=" not-md:mt-4">
           <button
             style={{ cursor: link ? "pointer" : "default" }}
             onClick={() => {
@@ -173,7 +173,7 @@ const MyWorksDisplay = ({
             }}
             className=" bg-[#FF7F50] rounded-2xl text-white font-bold px-3 py-1"
           >
-            {link ? "Live Project" : "Not in Live"}
+            {link ? "Live Project" : "Not Live"}
           </button>
         </div>
       </div>

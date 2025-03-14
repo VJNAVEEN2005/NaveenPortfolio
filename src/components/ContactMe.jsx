@@ -39,7 +39,7 @@ const ContactMe = () => {
           Email Sent Successfully!
         </div>
       </div>
-      <div className=" flex flex-col mx-40 h-full justify-evenly">
+      <div className=" flex flex-col mx-40 not-md:mt-10 h-full justify-evenly">
         <div>
           <div
             id="NySkills-head"
@@ -49,9 +49,9 @@ const ContactMe = () => {
             <h2 className=" text-[#FF7F50]">Connect</h2>
           </div>
         </div>
-        <div className=" grid grid-cols-2 gap-30">
+        <div className=" grid md:grid-cols-2 md:gap-30 gap-24 not-md:mt-10">
           <div>
-            <form className=" flex flex-col gap-5" ref={form} onSubmit={sendEmail}>
+            <form className=" flex flex-col gap-5 " ref={form} onSubmit={sendEmail}>
               <input
                 type="text"
                 className=" bg-[#1A1A1A] border border-[#242932] w-full rounded-xl text-white text-xl p-2"
@@ -89,7 +89,7 @@ const ContactMe = () => {
               </div>
             </form>
           </div>
-          <div className=" flex flex-col justify-evenly">
+          <div className=" flex flex-col justify-evenly not-md:gap-5 not-md:mb-10">
             <div className=" flex flex-col gap-4 border bg-[#1A1A1A] border-[#FF7F50] p-5 rounded-xl">
               <div className=" text-2xl font-bold text-[#FF7F50]">
                 Get in Touch
