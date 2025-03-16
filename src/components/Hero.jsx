@@ -27,7 +27,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className=" min-h-screen not-md:gap-5 not-md:justify-evenly md:grid md:grid-cols-2 flex flex-col-reverse place-items-center">
+    <section className=" md:min-h-screen not-md:gap-8 not-md:justify-evenly md:grid md:grid-cols-2 flex flex-col-reverse place-items-center">
       <div className=" md:mx-10 mx-5 flex flex-col gap-4">
         <h4 className=" font-bold md:text-xl text-lg text-[#FF7F50]">
           Welcome to my portfolio
@@ -61,7 +61,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className=" md:m-10 md:block not-md:mt-16 ">
+      <div className=" md:m-10 md:block not-md:mt-10 ">
         <motion.img
         initial={{ y:10 }}
         animate={{ y: -10 }}

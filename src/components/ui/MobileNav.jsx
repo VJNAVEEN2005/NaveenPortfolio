@@ -34,7 +34,7 @@ const MobileNav = () => {
     },
   ];
   return (
-    <div className=" mx-4 my-2 border-2 bg-[#121212] border-[#FF7F50] px-6 shadow-lg shadow-[#FF7F50] py-2 rounded-3xl">
+    <div className=" mx-4 my-5 border-2 bg-[#121212] border-[#FF7F50] px-6 shadow-lg shadow-[#FF7F50] py-2 rounded-3xl">
       <div className="flex w-full justify-between items-center">
         <motion.div
           initial={{ opacity: 0, y: -100 }}
