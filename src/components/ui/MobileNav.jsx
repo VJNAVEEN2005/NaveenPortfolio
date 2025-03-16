@@ -70,7 +70,7 @@ const MobileNav = () => {
         nav.map((item, index) => {
           return (
             <div
-            onClick={() => {navigate(item.url); window.location.href='/'; setIsToggle(false)}}
+            onClick={() => {window.location.href = item.url; setIsToggle(false)}}
               className=" text-white text-lg font-semibold cursor-pointer"
               key={index}
             >
