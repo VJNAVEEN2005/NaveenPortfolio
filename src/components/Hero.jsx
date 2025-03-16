@@ -27,7 +27,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className=" min-h-screen grid md:grid-cols-2 place-items-center">
+    <section className=" min-h-screen not-md:gap-5 not-md:justify-evenly md:grid md:grid-cols-2 flex flex-col-reverse place-items-center">
       <div className=" md:mx-10 mx-5 flex flex-col gap-4">
         <h4 className=" font-bold md:text-xl text-lg text-[#FF7F50]">
           Welcome to my portfolio
@@ -61,13 +61,13 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className=" m-10 md:block hidden ">
+      <div className=" md:m-10 md:block not-md:mt-16 ">
         <motion.img
         initial={{ y:10 }}
         animate={{ y: -10 }}
         transition={{ repeat: Infinity, duration: 1, repeatType:'mirror', ease: "easeInOut" }}
         //whileHover={{ scale: 1.1, duration: 0.5 }}
-          className="w-1/2  border-4 border-[#FF7F50] cursor-pointer rounded-full mx-auto shadow-lg shadow-[#FF7F50] "
+          className="md:w-1/2 w-40  border-4 border-[#FF7F50] cursor-pointer rounded-full mx-auto shadow-lg shadow-[#FF7F50] "
           src={profile}
           alt="React logo"
         />

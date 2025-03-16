@@ -27,6 +27,10 @@ const Nav = () => {
       name: "Contact",
       url: "/contact",
     },
+    {
+      name: "Resume",
+      url: "/resume",
+    }
   ];
   return (
     <div>
@@ -74,6 +78,7 @@ const Nav = () => {
               </div>
             );
           })}
+          
         </motion.div>
       </div>
 
