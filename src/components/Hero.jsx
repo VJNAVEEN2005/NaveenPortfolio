@@ -27,7 +27,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className=" md:min-h-screen not-md:gap-8 not-md:justify-evenly md:grid md:grid-cols-2 flex flex-col-reverse place-items-center">
+    <section className=" md:min-h-screen not-md:h-[90vh] not-md:gap-8 not-md:justify-evenly md:grid md:grid-cols-2 flex flex-col-reverse place-items-center">
       <div className=" md:mx-10 mx-5 flex flex-col gap-4">
         <h4 className=" font-bold md:text-xl text-lg text-[#FF7F50]">
           Welcome to my portfolio
