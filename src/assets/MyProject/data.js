@@ -5,8 +5,17 @@ import goalsReact from './images/GoalsReact.png';
 import folioflow from './images/folioflow.png';
 import ainotes from './images/ainotes.png';
 import prepslab from './images/prepslab.png';
+import tradingbot from './images/tradingbot.png';
 
 export const projectsData = [
+    {
+        title: "AI Trading Bot",
+        description: "An advanced AI-powered trading dashboard that provides real-time market analysis, technical indicators like RSI, and automated trading signals for cryptocurrency.",
+        image: tradingbot,
+        techStack: ["ReactJs", "Tailwind CSS", "AI", "HuggingFace"],
+        link: "https://naveenvj-trading-bot.hf.space/dashboard",
+        github: "https://github.com/VJNAVEEN2005/Trading-Bot",
+    },
     {
         title: "PrepSlab",
         description: "An AI-powered mock test platform that generates practice questions using AI, allowing students to practice and improve their performance through simulated exams and performance tracking.",
