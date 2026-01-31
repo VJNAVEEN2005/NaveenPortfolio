@@ -2,8 +2,16 @@ import cgpa from './images/cgpa.png';
 import aicPecf from './images/aic-pecf.png';
 import notesFlutter from './images/notesFlutter.png';
 import goalsReact from './images/GoalsReact.png';
+import folioflow from './images/folioflow.png';
 
 export const projectsData = [
+    {
+        title: "FolioFlow",
+        description: "A powerful, no-code portfolio builder that allows users to create stunning professional portfolios in minutes with an intuitive editor.",
+        image: folioflow,
+        techStack: ["ReactJs", "Tailwind CSS", "Framer Motion", "GSAP"],
+        link: "https://folioflow.netlify.app/",
+    },
     {
         title: "CGPA Calculator",
         description: "Created a CGPA calculator using HTML, CSS, and JavaScript to compute CGPA based on input grades and credits. The project improved my problem-solving skills and provided a practical tool for students",
