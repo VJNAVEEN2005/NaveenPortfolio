@@ -72,6 +72,7 @@ const MyWorks = () => {
                     image={project.image}
                     techStack={project.techStack}
                     link={project.link || null}
+                    github={project.github || null}
                     phone={project.phone || false}
                     key={index}
                   />
@@ -93,6 +94,7 @@ const MyWorksDisplay = ({
   image,
   techStack,
   link,
+  github,
   phone,
   key,
 }) => {
@@ -163,7 +165,7 @@ const MyWorksDisplay = ({
             );
           })}
         </div>
-        <div className=" not-md:mt-4">
+        <div className=" flex gap-4 not-md:mt-4">
           <button
             style={{ cursor: link ? "pointer" : "default" }}
             onClick={() => {
@@ -171,10 +173,23 @@ const MyWorksDisplay = ({
                 window.open(link);
               }
             }}
-            className=" bg-[#FF7F50] rounded-2xl text-white font-bold px-3 py-1"
+            className=" bg-[#FF7F50] rounded-2xl text-white font-bold px-4 py-2"
           >
             {link ? "Live Project" : "Not Live"}
           </button>
+          {github && (
+            <button
+              onClick={() => {
+                if (github !== "private") {
+                  window.open(github);
+                }
+              }}
+              style={{ cursor: github === "private" ? "not-allowed" : "pointer", opacity: github === "private" ? 0.6 : 1 }}
+              className={` border-2 border-[#FF7F50] text-[#FF7F50] rounded-2xl font-bold px-4 py-2 ${github !== "private" ? "hover:bg-[#FF7F50] hover:text-white transition-colors" : ""}`}
+            >
+              {github === "private" ? "Private" : "GitHub"}
+            </button>
+          )}
         </div>
       </div>
     </div>
