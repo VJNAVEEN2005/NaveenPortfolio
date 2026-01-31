@@ -1,8 +1,11 @@
 import React from "react";
 import { profile } from "../assets/AboutMe/data";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const socialMedia = [
     {
       title: "Github",
@@ -46,10 +49,16 @@ const Hero = () => {
           solve real-world problems.
         </p>
         <div className=" flex gap-5">
-          <button className=" bg-[#FF7F50] md:py-3 md:px-4 not-md:text-sm px-3 py-2 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff6250]">
+          <button 
+            onClick={() => navigate('/works')}
+            className=" bg-[#FF7F50] md:py-3 md:px-4 not-md:text-sm px-3 py-2 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff6250]"
+          >
             View MyWorks
           </button>
-          <button className="  border border-[#FF7F50] md:py-3 md:px-4 not-md:text-sm px-3 py-2 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff7f5042]">
+          <button 
+            onClick={() => navigate('/contact')}
+            className="  border border-[#FF7F50] md:py-3 md:px-4 not-md:text-sm px-3 py-2 text-white rounded-xl font-bold cursor-pointer transition-all hover:bg-[#ff7f5042]"
+          >
             Contact Me
           </button>
         </div>

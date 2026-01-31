@@ -1,44 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useRef } from "react";
 
 const ContactMe = () => {
   const form = useRef();
-  const [isSuccessful, setIsSuccessful] = useState(false);
 
-  const sendEmail = (e) => {
+  const handleSendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm("service_hzli9mk", "template_sc9tmtr", form.current, {
-        publicKey: "j2k8ApJEWdTYJ7gg4",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          form.current.reset();
-          setIsSuccessful(true);
-          setTimeout(() => {  
-            setIsSuccessful(false);
-          }, 2000);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+    
+    // Get form values
+    const formData = new FormData(form.current);
+    const name = formData.get('user_name');
+    const email = formData.get('user_email');
+    const message = formData.get('message');
+    
+    // Construct mailto link
+    const recipientEmail = "vjnaveen2005@gmail.com";
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    
+    // Open email client
+    window.location.href = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
-
 
   return (
     <section className=" h-screen flex flex-col justify-center items-center">
-      <div className=" fixed top-5 right-5">
-        <div
-          className={`${
-            isSuccessful ? "bg-[#FF7F50]" : "bg-[#FF7F50] hidden"
-          } text-white text-lg font-bold px-3 py-2 rounded-xl transition-all`}
-        >
-          Email Sent Successfully!
-        </div>
-      </div>
       <div className=" flex flex-col mx-40 not-md:mt-10 h-full justify-evenly">
         <div>
           <div
@@ -51,7 +35,7 @@ const ContactMe = () => {
         </div>
         <div className=" grid md:grid-cols-2 md:gap-30 gap-24 not-md:mt-10">
           <div>
-            <form className=" flex flex-col gap-5 " ref={form} onSubmit={sendEmail}>
+            <form className=" flex flex-col gap-5 " ref={form} onSubmit={handleSendEmail}>
               <input
                 type="text"
                 className=" bg-[#1A1A1A] border border-[#242932] w-full rounded-xl text-white text-xl p-2"
@@ -76,7 +60,7 @@ const ContactMe = () => {
               <div className=" flex gap-5">
                 <button
                   type="submit"
-                  className=" bg-[#FF7F50] cursor-pointer rounded-xl text-white text-lg font-bold px-3 py-2"
+                  className=" bg-[#FF7F50] hover:bg-[#ff6250] cursor-pointer rounded-xl text-white text-lg font-bold px-3 py-2 transition-all"
                 >
                   Send Message
                 </button>
@@ -84,7 +68,7 @@ const ContactMe = () => {
                   type="reset"
                   className=" border hover:bg-[#ff7f5094] border-[#FF7F50] cursor-pointer rounded-xl text-white text-lg font-bold px-3 py-2"
                 >
-                  Reset Message
+                  Reset
                 </button>
               </div>
             </form>
